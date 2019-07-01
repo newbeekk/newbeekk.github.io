@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="QJia">
 <meta property="og:description" content="通过前期的了解node的基础知识后，发现了koa框架，那当然也得学习一波啊。    笔记走起-=- 1、脚手架的使用    全局安装 yarn add global koa-generator 2、创建项目 koa2 -e projec(项目名称) （-e代表使用ejs模板引擎） 3、安装依赖 cd project （进入项目） yarn （安装依赖） 4、启动项目 启动脚本: &amp;quot;scr">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-01T07:34:24.184Z">
+<meta property="og:updated_time" content="2019-07-01T09:11:14.586Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="koa2初学">
 <meta name="twitter:description" content="通过前期的了解node的基础知识后，发现了koa框架，那当然也得学习一波啊。    笔记走起-=- 1、脚手架的使用    全局安装 yarn add global koa-generator 2、创建项目 koa2 -e projec(项目名称) （-e代表使用ejs模板引擎） 3、安装依赖 cd project （进入项目） yarn （安装依赖） 4、启动项目 启动脚本: &amp;quot;scr">
@@ -353,7 +353,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  179
+                  321
                 </span>
               
 
@@ -407,8 +407,23 @@ yarn （安装依赖）
     &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
   }
   start和test如果用npm启动，为npm start/text即可,
-  而dev和prd则需要npm run dev/prd，不要问为什么，问就是本来需要这样~~~     
-</code></pre>
+  而dev和prd则需要npm run dev/prd，不要问为什么，问就是本来需要这样~~~   
+</code></pre><p>5、babel配置</p>
+<pre><code>在运行脚本scripts中添加 --exec babel-node
+&quot;scripts&quot;: {
+    &quot;start&quot;: &quot;node bin/www --exec babel-node --exec babel-node&quot;,
+    &quot;dev&quot;: &quot;./node_modules/.bin/nodemon bin/www&quot;,
+    &quot;prd&quot;: &quot;pm2 start bin/www&quot;,
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
+},
+
+安装依赖：
+npm i babel-cli   // 这是babel解释器的客户端主程序 
+npm i babel-core   // babel的核心文件,好像默认会自动安装
+npm i babel-preset-es2015 // 把代码转换成ES6
+npm i babel-preset-stage-0 // 把代码转换成ES7
+</code></pre><p>在.babelrc中配置<br>    {<br>        “presets”: [“es2015”,”stage-0”]<br>    }</p>
+
       
     </div>
     
@@ -703,7 +718,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      615
+      757
     </span>
   
 </div>
@@ -718,7 +733,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共615字</span>
+  <span class="post-count">博客全站共757字</span>
 </div>
 
         
